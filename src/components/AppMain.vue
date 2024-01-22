@@ -5,8 +5,8 @@ export default {
 
         };
     },
-    methods: {
-
+    props: {
+        allCards: Array
     }
 }
 </script>
@@ -33,11 +33,24 @@ export default {
         <div class="container bg-light text-dark">
             <div class="row">
                 <div class="col-12 bg-dark text-white pt-3 pb-3">
-                    Fuond 39 cards
+                    Found 39 cards
                 </div>
 
-                <div class="col-12 col-sm-3 text-center" v-for="i in 15" :key="i">
-                    carta
+                <div class="col-12 col-sm-3 text-center"
+                v-for="(cards, i) in allCards"
+                :key="i">
+                    <div class="single-card">
+                        <div>
+                            <img :src="cards.image_url" :alt="cards.name">
+                        </div>
+                        <div>
+                            {{cards.name}}
+                        </div>
+                        <div>
+                            {{cards.archetype}}
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
