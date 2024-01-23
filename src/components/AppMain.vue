@@ -1,8 +1,10 @@
 <script>
+import { store } from '../store.js';
+
 export default {
     data() {
         return {
-
+            store
         };
     },
     props: {
@@ -37,7 +39,7 @@ export default {
                 </div>
 
                 <div class="col-12 col-sm-3 text-center"
-                v-for="(cards, i) in allCards"
+                v-for="(cards, i) in store.cards"
                 :key="i">
                     <div class="single-card">
                         <div>
