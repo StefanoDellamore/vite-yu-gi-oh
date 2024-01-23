@@ -3,3 +3,20 @@
 
 @import "bootstrap/scss/bootstrap";
 
+.container-img {
+    height: 200px;
+}
+
+.container-img > img {
+    height: 100%;
+}
+
+.single-card{
+    background-color: #ffc107; 
+}
+
+.container-back-single-card {
+    width: 80%;
+    padding: 50px;
+    background-color: white;
+}

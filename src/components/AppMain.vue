@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <main class="bg-warning text-dark">
+    <main class="bg-warning text-dark d-flex justify-content-center flex-wrap">
         <div class="container">
             <!--Input-->
             <div class="row pt-3 pb-3">
@@ -32,30 +32,37 @@ export default {
             </div>     
         </div>
         <!--Card-->
-        <div class="container bg-light text-dark">
-            <div class="row">
-                <div class="col-12 bg-dark text-white pt-3 pb-3">
-                    Found 39 cards
-                </div>
 
-                <div class="col-12 col-sm-3 text-center"
-                v-for="(cards, i) in store.cards"
-                :key="i">
-                    <div class="single-card">
-                        <div>
-                            <img :src="cards.image_url" :alt="cards.name">
-                        </div>
-                        <div>
-                            {{cards.name}}
-                        </div>
-                        <div>
-                            {{cards.archetype}}
-                        </div>
-                        
+        <div class="container-back-single-card d-flex justify-content-center">
+            <div class="container bg-light text-dark">
+                <div class="row">
+                    <div class="col-12 bg-dark text-white pt-3 pb-3">
+                        Found 39 cards
                     </div>
+                    
+                    <div class="col-3 mt-2 d-flex flex-wrap"
+                    v-for="(cards, i) in store.cards"
+                        :key="i">
+                            <div class="single-card d-flex justify-content-center flex-wrap">
+                                <div class="container-img">
+                                    <img :src="cards.card_images[0].image_url" :alt="cards.name">
+                                </div>
+                                <p class="text-center">
+                                    {{cards.name}}
+                                </p>
+                                <p>
+                                    {{cards.archetype}}
+                                </p>
+                                
+                            </div>
+                        
+                                                                    
+                    </div>
+                    
                 </div>
             </div>
         </div>
+        
     </main>
 </template>
 
